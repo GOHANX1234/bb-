@@ -6,7 +6,7 @@ const MONGODB_URI = process.env.MONGODB_URI;
 async function seedDefaultAdmin(): Promise<void> {
   try {
     // Check if admin with username "admin" already exists
-    const existingAdmin = await Admin.findOne({ username: 'powercheat' });
+    const existingAdmin = await Admin.findOne({ username: 'bbteammod' });
     
     if (!existingAdmin) {
       // Get the next ID for the admin
@@ -16,7 +16,7 @@ async function seedDefaultAdmin(): Promise<void> {
       // Create default admin user
       const defaultAdmin = new Admin({
         id: nextId,
-        username: 'powercheat',
+        username: 'bbteammod',
         password: 'propanel' // This will be automatically encrypted by the pre-save hook
       });
       
