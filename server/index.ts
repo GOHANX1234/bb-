@@ -18,7 +18,7 @@ const isProduction = process.env.NODE_ENV === "production";
 
 // Define origins for CORS
 const corsOrigin = isProduction
-  ? [process.env.CORS_ORIGIN || "https://bbteammod.powercheats.xyz/"] // Allow configurable origin in production
+  ? [process.env.CORS_ORIGIN || "https://bbteammod.shop/"] // Allow configurable origin in production
   : true; // Allow all origins in development
 
 // Apply CORS middleware with special handling for admin endpoints
@@ -28,7 +28,7 @@ app.use((req, res, next) => {
     // For admin endpoints, only allow same-origin requests in production
     // In development, allow localhost origins only
     const allowedAdminOrigin = isProduction 
-      ? (process.env.CORS_ORIGIN || "https://bbteammod.powercheats.xyz/").replace(/\/$/, '')
+      ? (process.env.CORS_ORIGIN || "https://bbteammod.shop/").replace(/\/$/, '')
       : `${req.protocol}://${req.get('host')}`;
     
     cors({
