@@ -16,7 +16,7 @@ services:
       - key: COOKIE_SAME_SITE
         value: none
       - key: PUBLIC_URL
-        value: https://bbteammod.powercheats.xyz/
+        value: https://bbteammod.shop/
     disk:
       name: data-dir
       mountPath: /opt/render/project/src/data
